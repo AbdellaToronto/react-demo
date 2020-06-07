@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { MyCard } from "./components/card/card.component";
+
+const clickFunc1 = () => {
+  console.log('old school, logging in console');
+}
+
+
+const clickFunc2 = () => {
+  alert('Im hip and cool');
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyCard name="Della" content="Some long content string" clickFunc={clickFunc1} />
+      <MyCard name="Ella" content="when I click on this card I want an alert to open" clickFunc={clickFunc2} />
+      <MyCard name="Olla" content="Some long content string" clickFunc={clickFunc1} />
     </div>
   );
 }
